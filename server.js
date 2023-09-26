@@ -21,6 +21,17 @@ app.get('/pokemon/:id', (req, res) => {
   res.render('Show', { id, pokemon });
 });
 
+// New
+app.get('/pokemon/new', (req, res) => {
+  res.render('New');
+});
+
+// Create
+app.post('/pokemon', (req, res) => {
+  const newPokemonData = req.body;
+  res.redirect('/pokemon');
+});
+
 app.listen(port, () => {
   console.log('Server is running on port ' + port);
 });
